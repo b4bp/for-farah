@@ -1135,18 +1135,41 @@
         const soundToggle = document.getElementById('soundToggle');
         
         // =======================
-// WEB AUDIO API SOUNDS
-// =======================
-function initAudio() {
-    try {
-        audioContext = new (window.AudioContext || window.webkitAudioContext)();
-        return true;
-    } catch (e) {
-        console.log("WebAudio not supported");
-        return false;
-    }
-}
-}
+        // WEB AUDIO API SOUNDS
+        // =======================
+        function initAudio() {
+            try {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                return true;
+            } catch (e) {
+                console.log("WebAudio not supported");
+                return false;
+            }
+        }
+        
+        function playBeep(frequency = 800, duration = 0.1, type = 'sine', volume = 0.3) {
+            if (!soundsEnabled || !audioContext) return;
+            
+            try {
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                
+                oscillator.frequency.value = frequency;
+                oscillator.type = type;
+                
+                const now = audioContext.currentTime;
+                gainNode.gain.setValueAtTime(volume, now);
+                gainNode.gain.exponentialRampToValueAtTime(0.001, now + duration);
+                
+                oscillator.start();
+                oscillator.stop(now + duration);
+            } catch (e) {
+                console.log("Sound error:", e);
+            }
+        }
         
         function playSuccessSound() {
             if (!soundsEnabled || !audioContext) return;
@@ -1661,4 +1684,3 @@ function initAudio() {
     </script>
 </body>
 </html>
-
