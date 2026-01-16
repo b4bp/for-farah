@@ -1,0 +1,1657 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>🚀 البدايه بس- 4444</title>
+    
+    <!-- إصلاح مشكلة Apple -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Font Arabic -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ========================
+           RESET & BASE
+           ======================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-text-size-adjust: 100%;
+            -moz-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+            overflow-y: auto;
+            font-family: 'Tajawal', 'Segoe UI', system-ui, sans-serif;
+            direction: rtl;
+            background: #000;
+            color: #fff;
+            position: relative;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* إصلاح مشكلة iOS */
+        @supports (-webkit-touch-callout: none) {
+            html, body {
+                height: -webkit-fill-available;
+            }
+        }
+
+        /* ========================
+           COSMIC BACKGROUND
+           ======================== */
+        .cosmic-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: 
+                radial-gradient(ellipse at 20% 30%, rgba(10, 20, 100, 0.3) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 70%, rgba(100, 20, 80, 0.2) 0%, transparent 60%),
+                radial-gradient(ellipse at 40% 50%, rgba(20, 100, 80, 0.2) 0%, transparent 60%),
+                linear-gradient(180deg, #000428 0%, #004e92 50%, #000428 100%);
+            overflow: hidden;
+        }
+
+        /* Stars Animation */
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            animation: starMove 300s linear infinite;
+        }
+
+        .stars::before,
+        .stars::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(2px 2px at 50px 100px, #EEE, transparent),
+                radial-gradient(2px 2px at 150px 50px, #FFF, transparent),
+                radial-gradient(1px 1px at 250px 150px, #DDD, transparent),
+                radial-gradient(1px 1px at 350px 200px, #FFF, transparent);
+            background-repeat: repeat;
+            background-size: 400px 400px;
+        }
+
+        .stars::after {
+            transform: translateX(-200px) translateY(-100px);
+            opacity: 0.5;
+        }
+
+        @keyframes starMove {
+            from { transform: translateY(0); }
+            to { transform: translateY(-200px); }
+        }
+
+        /* Shooting Stars */
+        .shooting-star {
+            position: absolute;
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+            border-radius: 1px;
+            filter: blur(1px);
+            animation: shooting 4s linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes shooting {
+            0% {
+                transform: translateX(100vw) translateY(0) rotate(-45deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            20% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(-100vw) translateY(100vh) rotate(-45deg);
+                opacity: 0;
+            }
+        }
+
+        /* Planets */
+        .planet {
+            position: absolute;
+            border-radius: 50%;
+            animation: planetFloat 60s ease-in-out infinite;
+            filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
+        }
+
+        .planet-1 {
+            width: 80px;
+            height: 80px;
+            top: 15%;
+            left: 10%;
+            background: radial-gradient(circle at 30% 30%, #ff6b6b, #4a00e0);
+        }
+
+        .planet-2 {
+            width: 120px;
+            height: 120px;
+            bottom: 10%;
+            right: 15%;
+            background: radial-gradient(circle at 30% 30%, #00cec9, #0984e3);
+        }
+
+        .planet-3 {
+            width: 60px;
+            height: 60px;
+            top: 40%;
+            right: 5%;
+            background: radial-gradient(circle at 30% 30%, #fd79a8, #e84393);
+        }
+
+        @keyframes planetFloat {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(20px, -20px) scale(1.05); }
+            50% { transform: translate(-15px, 15px) scale(0.95); }
+            75% { transform: translate(-10px, -10px) scale(1.02); }
+        }
+
+        /* ========================
+           SCROLLABLE CONTAINER
+           ======================== */
+        .scroll-container {
+            position: relative;
+            width: 100%;
+            min-height: 100%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            z-index: 2;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* ========================
+           GALAXY FRAME
+           ======================== */
+        .galaxy-frame {
+            width: 100%;
+            max-width: 500px;
+            background: rgba(10, 10, 40, 0.92);
+            border-radius: 25px;
+            padding: 25px;
+            margin: 20px 0;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+            box-shadow: 
+                0 20px 50px rgba(0, 0, 0, 0.5),
+                0 0 0 1px rgba(0, 255, 255, 0.1),
+                0 0 30px rgba(0, 255, 255, 0.2),
+                inset 0 0 20px rgba(255, 255, 255, 0.05);
+        }
+
+        .galaxy-frame::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #00ffff, #ff00ff, #ffff00, #00ffff);
+            border-radius: 27px;
+            z-index: -1;
+            animation: borderGlow 4s linear infinite;
+            background-size: 400% 400%;
+        }
+
+        @keyframes borderGlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* ========================
+           HEADER SECTION
+           ======================== */
+        .galaxy-header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+        }
+
+        .header-icon {
+            font-size: 48px;
+            color: #00ffff;
+            margin-bottom: 15px;
+            animation: iconFloat 3s ease-in-out infinite;
+            filter: drop-shadow(0 0 15px #00ffff);
+        }
+
+        @keyframes iconFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+        }
+
+        .header-title {
+            font-size: 28px;
+            font-weight: 900;
+            background: linear-gradient(45deg, #00ffff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+            text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            line-height: 1.3;
+        }
+
+        .header-subtitle {
+            color: #a0a0ff;
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        /* ========================
+           PIN DISPLAY
+           ======================== */
+        .pin-display-container {
+            background: rgba(0, 0, 20, 0.7);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            box-shadow: 
+                inset 0 0 30px rgba(0, 255, 255, 0.1),
+                0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .pin-dots {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .pin-dot {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(0, 255, 255, 0.5);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .pin-dot.active {
+            background: linear-gradient(45deg, #00ffff, #ff00ff);
+            border-color: #fff;
+            box-shadow: 
+                0 0 20px #00ffff,
+                inset 0 0 10px #ffffff;
+            animation: dotPulse 1.5s infinite;
+        }
+
+        @keyframes dotPulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 20px #00ffff; }
+            50% { transform: scale(1.1); box-shadow: 0 0 30px #00ffff; }
+        }
+
+        .pin-status {
+            text-align: center;
+            padding: 15px;
+            background: rgba(0, 255, 255, 0.1);
+            border-radius: 15px;
+            font-size: 16px;
+            color: #a0ffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-height: 50px;
+        }
+
+        .pin-status i {
+            font-size: 20px;
+        }
+
+        .pin-status.success {
+            background: rgba(0, 255, 0, 0.2);
+            color: #7fff7f;
+            animation: successPulse 2s infinite;
+        }
+
+        .pin-status.error {
+            background: rgba(255, 0, 0, 0.2);
+            color: #ff7f7f;
+            animation: errorShake 0.5s;
+        }
+
+        @keyframes successPulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.4); }
+            50% { box-shadow: 0 0 0 10px rgba(0, 255, 0, 0); }
+        }
+
+        @keyframes errorShake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+
+        /* ========================
+           COSMIC KEYPAD
+           ======================== */
+        .cosmic-keypad {
+            margin: 30px 0;
+        }
+
+        .keypad-row {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .cosmic-key {
+            width: 80px;
+            height: 80px;
+            background: rgba(20, 20, 60, 0.8);
+            border: 2px solid rgba(0, 255, 255, 0.5);
+            border-radius: 20px;
+            color: white;
+            font-size: 32px;
+            font-weight: 800;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            position: relative;
+            overflow: hidden;
+            -webkit-user-select: none;
+            user-select: none;
+            touch-action: manipulation;
+        }
+
+        /* تحسينات اللمس للجوال */
+        .cosmic-key:active {
+            transform: scale(0.95);
+            background: rgba(0, 255, 255, 0.2);
+            transition: transform 0.1s ease;
+        }
+
+        .cosmic-key:hover:not(:active) {
+            transform: translateY(-3px);
+            border-color: #00ffff;
+            box-shadow: 
+                0 10px 20px rgba(0, 255, 255, 0.3),
+                0 0 30px rgba(0, 255, 255, 0.2);
+        }
+
+        .key-number {
+            font-size: 32px;
+            background: linear-gradient(45deg, #00ffff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+        }
+
+        .key-subtitle {
+            font-size: 12px;
+            color: #ffff00;
+            margin-top: 4px;
+        }
+
+        .special-key {
+            font-size: 24px;
+        }
+
+        .key-label {
+            font-size: 14px;
+            color: #aaa;
+            margin-top: 4px;
+        }
+
+        /* ========================
+           ATTEMPTS INDICATOR
+           ======================== */
+        .attempts-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
+        }
+
+        .attempts-label {
+            color: #a0a0ff;
+            font-size: 16px;
+        }
+
+        .attempts-dots {
+            display: flex;
+            gap: 10px;
+        }
+
+        .attempt-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .attempt-dot.active {
+            background: #00ffff;
+            box-shadow: 0 0 10px #00ffff;
+        }
+
+        .attempt-dot.used {
+            background: #ff0000;
+            box-shadow: 0 0 10px #ff0000;
+        }
+
+        /* ========================
+           SPACE MESSAGE
+           ======================== */
+        .space-message {
+            background: rgba(0, 255, 255, 0.1);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 20px;
+            margin-top: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .message-icon {
+            font-size: 36px;
+            color: #00ffff;
+            animation: spin 20s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .message-text {
+            color: #a0a0ff;
+            font-size: 15px;
+            line-height: 1.6;
+            text-align: right;
+        }
+
+        .message-highlight {
+            color: #ffff00;
+            font-weight: 700;
+            text-shadow: 0 0 10px #ffff00;
+        }
+
+        /* ========================
+           GALAXY LOGO
+           ======================== */
+        .galaxy-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 20px;
+        }
+
+        .logo-icon {
+            font-size: 32px;
+            color: #ff00ff;
+            animation: logoPulse 3s infinite;
+        }
+
+        @keyframes logoPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .logo-code {
+            font-size: 14px;
+            color: #00ffff;
+            font-family: monospace;
+        }
+
+        /* ========================
+           SUCCESS PORTAL
+           ======================== */
+        .success-portal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            z-index: 9999;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .success-portal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .portal-content {
+            background: rgba(10, 10, 40, 0.95);
+            border-radius: 25px;
+            padding: 30px;
+            border: 2px solid rgba(0, 255, 255, 0.5);
+            box-shadow: 
+                0 0 60px rgba(0, 255, 255, 0.5),
+                0 0 100px rgba(255, 0, 255, 0.3);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portal-content::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent 30%,
+                rgba(0, 255, 255, 0.2) 50%,
+                transparent 70%
+            );
+            animation: portalScan 3s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes portalScan {
+            from { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            to { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .portal-icon {
+            font-size: 64px;
+            color: #00ffff;
+            margin-bottom: 20px;
+            animation: portalIconFloat 2s ease-in-out infinite;
+            filter: drop-shadow(0 0 30px #00ffff);
+        }
+
+        @keyframes portalIconFloat {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-10px) scale(1.1); }
+        }
+
+        .portal-title {
+            font-size: 32px;
+            font-weight: 900;
+            background: linear-gradient(45deg, #00ffff, #ff00ff, #ffff00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            text-shadow: 0 0 30px rgba(0, 255, 255, 0.7);
+        }
+
+        .portal-message {
+            font-size: 18px;
+            color: #ccc;
+            line-height: 1.8;
+            margin: 25px 0;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+        }
+
+        .portal-code {
+            font-size: 42px;
+            font-weight: 900;
+            color: #ffff00;
+            margin: 20px 0;
+            animation: codeGlow 2s infinite;
+            text-shadow: 0 0 30px #ffff00;
+            letter-spacing: 5px;
+        }
+
+        @keyframes codeGlow {
+            0%, 100% { 
+                text-shadow: 0 0 30px #ffff00;
+                transform: scale(1);
+            }
+            50% { 
+                text-shadow: 0 0 60px #ffff00, 0 0 90px #ffff00;
+                transform: scale(1.05);
+            }
+        }
+
+        .portal-countdown {
+            font-size: 24px;
+            color: #00ffff;
+            margin: 25px 0;
+            font-weight: 700;
+            direction: ltr;
+        }
+
+        .countdown-number {
+            font-size: 36px;
+            font-weight: 900;
+            color: #ff00ff;
+            margin: 0 5px;
+            text-shadow: 0 0 20px #ff00ff;
+        }
+
+        .portal-note {
+            font-size: 16px;
+            color: #aaa;
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        /* ========================
+           MOBILE OPTIMIZATIONS
+           ======================== */
+        @media (max-width: 768px) {
+            .scroll-container {
+                padding: 15px;
+            }
+            
+            .galaxy-frame {
+                padding: 20px;
+                max-width: 100%;
+                margin: 10px 0;
+            }
+            
+            .header-title {
+                font-size: 24px;
+            }
+            
+            .cosmic-key {
+                width: 70px;
+                height: 70px;
+                font-size: 28px;
+            }
+            
+            .portal-content {
+                padding: 25px;
+                margin: 15px;
+            }
+            
+            .portal-title {
+                font-size: 28px;
+            }
+            
+            .portal-icon {
+                font-size: 48px;
+            }
+            
+            .portal-code {
+                font-size: 36px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .scroll-container {
+                padding: 10px;
+            }
+            
+            .galaxy-frame {
+                padding: 15px;
+                border-radius: 20px;
+            }
+            
+            .cosmic-key {
+                width: 65px;
+                height: 65px;
+                font-size: 26px;
+                min-width: 65px;
+                min-height: 65px;
+            }
+            
+            .keypad-row {
+                gap: 10px;
+                margin-bottom: 10px;
+            }
+            
+            .header-title {
+                font-size: 22px;
+            }
+            
+            .header-icon {
+                font-size: 40px;
+            }
+            
+            .pin-dot {
+                width: 20px;
+                height: 20px;
+            }
+            
+            .portal-title {
+                font-size: 24px;
+            }
+            
+            .portal-code {
+                font-size: 32px;
+                letter-spacing: 3px;
+            }
+            
+            .portal-countdown {
+                font-size: 20px;
+            }
+            
+            .countdown-number {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .cosmic-key {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+                min-width: 60px;
+                min-height: 60px;
+            }
+            
+            .keypad-row {
+                gap: 8px;
+            }
+            
+            .header-title {
+                font-size: 20px;
+            }
+            
+            .pin-dots {
+                gap: 15px;
+            }
+            
+            .pin-dot {
+                width: 18px;
+                height: 18px;
+            }
+        }
+
+        /* iOS Safari Fixes */
+        @supports (-webkit-touch-callout: none) {
+            .scroll-container {
+                padding-top: max(20px, env(safe-area-inset-top));
+                padding-bottom: max(20px, env(safe-area-inset-bottom));
+            }
+            
+            .cosmic-key {
+                cursor: pointer;
+                -webkit-touch-callout: none;
+            }
+        }
+
+        /* Fix for iPhone 16 Pro Max */
+        @media (min-width: 430px) and (max-height: 932px) {
+            .scroll-container {
+                padding-top: 44px;
+                padding-bottom: 34px;
+            }
+            
+            .cosmic-key {
+                width: 85px;
+                height: 85px;
+            }
+        }
+
+        /* تحسينات اللمس للجوال */
+        @media (hover: none) and (pointer: coarse) {
+            .cosmic-key {
+                min-height: 70px;
+            }
+            
+            .cosmic-key:active {
+                transform: scale(0.95);
+                transition: transform 0.05s ease;
+            }
+        }
+
+        /* إصلاح مشاكل النصوص الشفافة */
+        .header-title,
+        .key-number,
+        .portal-title {
+            color: transparent !important;
+        }
+        
+        /* Sound Control Button */
+        .sound-control {
+            display: flex;
+            justify-content: center;
+            margin-top: 25px;
+        }
+        
+        #soundToggle {
+            background: rgba(0, 255, 255, 0.2);
+            border: 1px solid rgba(0, 255, 255, 0.5);
+            color: #00ffff;
+            padding: 12px 25px;
+            border-radius: 15px;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0 auto;
+            transition: all 0.3s ease;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        #soundToggle:hover {
+            background: rgba(0, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        #soundToggle.sound-on {
+            background: rgba(0, 255, 0, 0.2);
+            border-color: rgba(0, 255, 0, 0.5);
+        }
+        
+        #soundToggle.sound-off {
+            background: rgba(255, 0, 0, 0.2);
+            border-color: rgba(255, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <!-- ========================
+         COSMIC BACKGROUND
+         ======================== -->
+    <div class="cosmic-bg">
+        <div class="stars"></div>
+        <div class="planet planet-1"></div>
+        <div class="planet planet-2"></div>
+        <div class="planet planet-3"></div>
+        <div class="shooting-star" style="top:20%; animation-delay:0s;"></div>
+        <div class="shooting-star" style="top:40%; animation-delay:2s;"></div>
+        <div class="shooting-star" style="top:60%; animation-delay:4s;"></div>
+    </div>
+    
+    <!-- ========================
+         SCROLLABLE CONTENT
+         ======================== -->
+    <div class="scroll-container">
+        <!-- Galaxy Header -->
+        <div class="galaxy-frame">
+            <div class="galaxy-header">
+                <div class="header-icon">
+                    <i class="fas fa-satellite"></i>
+                </div>
+                <h1 class="header-title">🌌 نظام امن المجره 🌌</h1>
+                <p class="header-subtitle">   الرمز مكون من 4 ارقام</p>
+            </div>
+            
+            <!-- PIN Display -->
+            <div class="pin-display-container">
+                <div class="pin-dots">
+                    <div class="pin-dot" id="pinDot1"></div>
+                    <div class="pin-dot" id="pinDot2"></div>
+                    <div class="pin-dot" id="pinDot3"></div>
+                    <div class="pin-dot" id="pinDot4"></div>
+                </div>
+                
+                <div class="pin-status" id="pinStatus">
+                    <i class="fas fa-key"></i>
+                    <span>حطي الرمز السري</span>
+                </div>
+            </div>
+            
+            <!-- Cosmic Keypad -->
+            <div class="cosmic-keypad">
+                <div class="keypad-row">
+                    <button class="cosmic-key" data-key="1">
+                        <span class="key-number">1</span>
+                    </button>
+                    <button class="cosmic-key" data-key="2">
+                        <span class="key-number">2</span>
+                    </button>
+                    <button class="cosmic-key" data-key="3">
+                        <span class="key-number">3</span>
+                    </button>
+                </div>
+                
+                <div class="keypad-row">
+                    <button class="cosmic-key" data-key="4">
+                        <span class="key-number">4</span>
+                        <span class="key-subtitle">★</span>
+                    </button>
+                    <button class="cosmic-key" data-key="5">
+                        <span class="key-number">5</span>
+                    </button>
+                    <button class="cosmic-key" data-key="6">
+                        <span class="key-number">6</span>
+                    </button>
+                </div>
+                
+                <div class="keypad-row">
+                    <button class="cosmic-key" data-key="7">
+                        <span class="key-number">7</span>
+                    </button>
+                    <button class="cosmic-key" data-key="8">
+                        <span class="key-number">8</span>
+                    </button>
+                    <button class="cosmic-key" data-key="9">
+                        <span class="key-number">9</span>
+                    </button>
+                </div>
+                
+                <div class="keypad-row">
+                    <button class="cosmic-key special-key" id="clearKey">
+                        <i class="fas fa-backspace"></i>
+                        <span class="key-label">امسحي</span>
+                    </button>
+                    <button class="cosmic-key" data-key="0">
+                        <span class="key-number">0</span>
+                    </button>
+                    <button class="cosmic-key special-key" id="enterKey">
+                        <i class="fas fa-paper-plane"></i>
+                        <span class="key-label">جربي</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Attempts Indicator -->
+            <div class="attempts-container">
+                <span class="attempts-label">المحاولات:</span>
+                <div class="attempts-dots">
+                    <div class="attempt-dot active"></div>
+                    <div class="attempt-dot active"></div>
+                    <div class="attempt-dot active"></div>
+                    <div class="attempt-dot active"></div>
+                    <div class="attempt-dot active"></div>
+                </div>
+            </div>
+            
+            <!-- Space Message -->
+            <div class="space-message">
+                <div class="message-icon">
+                    <i class="fas fa-user-astronaut"></i>
+                </div>
+                <p class="message-text">
+                 هذي الرساله مشفره من المجره الحلزونيه<br>
+                    تم استلامها من <span class="message-highlight">احداثيات: X-4444</span>
+                </p>
+            </div>
+            
+            <!-- Galaxy Logo -->
+            <div class="galaxy-logo">
+                <div class="logo-icon">
+                    <i class="fas fa-globe-americas"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-title">نظام امن المجره</span>
+                    <span class="logo-code">شفره الوصول: 4444</span>
+                </div>
+            </div>
+            
+            <!-- Sound Control -->
+            <div class="sound-control">
+                <button id="soundToggle" class="sound-on">
+                    <i class="fas fa-volume-up"></i>
+                    <span>ميوت للاصوات </span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Extra Space for Scrolling -->
+        <div style="height: 100px;"></div>
+    </div>
+    
+    <!-- ========================
+         SUCCESS PORTAL
+         ======================== -->
+    <div class="success-portal" id="successPortal">
+        <div class="portal-content">
+            <div class="portal-icon">
+                <i class="fas fa-unlock-alt"></i>
+            </div>
+            
+            <h1 class="portal-title">🎉 تم فتح البوابه الكونية</h1>
+            
+            <div class="portal-message">
+                <p>عفيه مسنعه يله الي بعدوا</p>
+                <div class="portal-code">4444</div>
+                <p>الان تتم المعلومات شدي حيلج</p>
+            </div>
+            
+            <div class="portal-countdown" id="countdown">
+                الانتقال خلال: <span class="countdown-number" id="countdownNumber">5</span> ثواني
+            </div>
+            
+            <p class="portal-note">
+                <i class="fas fa-info-circle"></i>
+                اذا ما وداج دوسي باي مكان فاضي
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // =======================
+        // PIN SYSTEM
+        // =======================
+        const PIN_CODE = "4444";
+        let enteredPin = "";
+        let attempts = 0;
+        const maxAttempts = 5;
+        let soundsEnabled = true;
+        let audioContext;
+        
+        // Elements
+        const pinDots = [
+            document.getElementById('pinDot1'),
+            document.getElementById('pinDot2'),
+            document.getElementById('pinDot3'),
+            document.getElementById('pinDot4')
+        ];
+        const pinStatus = document.getElementById('pinStatus');
+        const successPortal = document.getElementById('successPortal');
+        const countdownNumber = document.getElementById('countdownNumber');
+        const attemptsDots = document.querySelectorAll('.attempt-dot');
+        const soundToggle = document.getElementById('soundToggle');
+        
+        // =======================
+        // WEB AUDIO API SOUNDS
+        // =======================
+        function initAudio() {
+            try {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                return true;
+            } catch (e) {
+                console.log("WebAudio not supported");
+                return false;
+            }
+        }
+        
+        function playBeep(frequency = 800, duration = 0.1, type = 'sine', volume = 0.3) {
+            if (!soundsEnabled || !audioContext) return;
+            
+            try {
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                
+                oscillator.frequency.value = frequency;
+                oscillator.type = type;
+                
+                const now = audioContext.currentTime;
+                gainNode.gain.setValueAtTime(volume, now);
+                gainNode.gain.exponentialRampToValueAtTime(0.001, now + duration);
+                
+                oscillator.start();
+                oscillator.stop(now + duration);
+            } catch (e) {
+                console.log("Sound error:", e);
+            }
+        }
+        
+        function playSuccessSound() {
+            if (!soundsEnabled || !audioContext) return;
+            
+            try {
+                // Play ascending beeps
+                playBeep(523.25, 0.2, 'sine', 0.2); // C5
+                setTimeout(() => playBeep(659.25, 0.2, 'sine', 0.2), 200); // E5
+                setTimeout(() => playBeep(783.99, 0.3, 'sine', 0.3), 400); // G5
+            } catch (e) {
+                console.log("Success sound error:", e);
+            }
+        }
+        
+        function playErrorSound() {
+            if (!soundsEnabled || !audioContext) return;
+            
+            try {
+                // Play descending buzz
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                
+                oscillator.type = 'sawtooth';
+                
+                const now = audioContext.currentTime;
+                oscillator.frequency.setValueAtTime(440, now); // A4
+                oscillator.frequency.exponentialRampToValueAtTime(220, now + 0.8); // A3
+                
+                gainNode.gain.setValueAtTime(0.3, now);
+                gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.8);
+                
+                oscillator.start();
+                oscillator.stop(now + 0.8);
+            } catch (e) {
+                console.log("Error sound error:", e);
+            }
+        }
+        
+        function playPortalSound() {
+            if (!soundsEnabled || !audioContext) return;
+            
+            try {
+                // Magical portal sound
+                const oscillator1 = audioContext.createOscillator();
+                const oscillator2 = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+                
+                oscillator1.connect(gainNode);
+                oscillator2.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                
+                oscillator1.type = 'sine';
+                oscillator2.type = 'triangle';
+                
+                const now = audioContext.currentTime;
+                
+                oscillator1.frequency.setValueAtTime(200, now);
+                oscillator1.frequency.exponentialRampToValueAtTime(800, now + 2);
+                
+                oscillator2.frequency.setValueAtTime(400, now);
+                oscillator2.frequency.exponentialRampToValueAtTime(1600, now + 2);
+                
+                gainNode.gain.setValueAtTime(0, now);
+                gainNode.gain.linearRampToValueAtTime(0.4, now + 0.2);
+                gainNode.gain.linearRampToValueAtTime(0.2, now + 1.8);
+                gainNode.gain.linearRampToValueAtTime(0, now + 2);
+                
+                oscillator1.start();
+                oscillator2.start();
+                oscillator1.stop(now + 2);
+                oscillator2.stop(now + 2);
+            } catch (e) {
+                console.log("Portal sound error:", e);
+            }
+        }
+        
+        // =======================
+        // SOUND TOGGLE
+        // =======================
+        function toggleSounds() {
+            soundsEnabled = !soundsEnabled;
+            
+            if (soundsEnabled) {
+                // Initialize audio if not already
+                if (!audioContext) {
+                    if (!initAudio()) {
+                        alert("المتصفح لا يدعم الأصوات");
+                        soundsEnabled = false;
+                        return;
+                    }
+                }
+                
+                // Resume if suspended
+                if (audioContext.state === 'suspended') {
+                    audioContext.resume();
+                }
+                
+                soundToggle.innerHTML = '<i class="fas fa-volume-up"></i><span>إيقاف الأصوات</span>';
+                soundToggle.className = 'sound-on';
+                
+                // Play test sound
+                setTimeout(() => playBeep(600, 0.1), 100);
+                
+            } else {
+                soundToggle.innerHTML = '<i class="fas fa-volume-mute"></i><span>شغلي الصوت </span>';
+                soundToggle.className = 'sound-off';
+            }
+        }
+        
+        // =======================
+        // TOUCH & CLICK HANDLERS
+        // =======================
+        document.querySelectorAll('.cosmic-key[data-key]').forEach(key => {
+            // Click handler
+            key.addEventListener('click', function() {
+                audioContext?.resume();
+                if (enteredPin.length < 4) {
+                    enterPin(this.dataset.key);
+                }
+            });
+            
+            // Touch handlers for mobile
+            key.addEventListener('touchstart', function(e) {
+                e.preventDefault();
+                this.style.transform = 'scale(0.95)';
+                this.style.backgroundColor = 'rgba(0, 255, 255, 0.2)';
+            }, { passive: false });
+            
+            key.addEventListener('touchend', function() {
+                this.style.transform = '';
+                this.style.backgroundColor = '';
+                setTimeout(() => {
+                    audioContext?.resume();
+                    if (enteredPin.length < 4) {
+                        enterPin(this.dataset.key);
+                    }
+                }, 100);
+            });
+        });
+        
+        // Clear button
+        document.getElementById('clearKey').addEventListener('click', clearPin);
+        document.getElementById('clearKey').addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            this.style.transform = 'scale(0.95)';
+        });
+        document.getElementById('clearKey').addEventListener('touchend', function() {
+            this.style.transform = '';
+            setTimeout(() => {
+                audioContext?.resume();
+                clearPin();
+            }, 100);
+        });
+        
+        // Enter button
+        document.getElementById('enterKey').addEventListener('click', checkPin);
+        document.getElementById('enterKey').addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            this.style.transform = 'scale(0.95)';
+        });
+        document.getElementById('enterKey').addEventListener('touchend', function() {
+            this.style.transform = '';
+            setTimeout(() => {
+                audioContext?.resume();
+                checkPin();
+            }, 100);
+        });
+        
+        // Sound toggle button
+        soundToggle.addEventListener('click', toggleSounds);
+        
+        // =======================
+        // PIN FUNCTIONS
+        // =======================
+        function enterPin(digit) {
+            if (enteredPin.length < 4) {
+                enteredPin += digit;
+                updatePinDots();
+                playBeep(800, 0.1);
+                animateKeyPress(digit);
+            }
+        }
+        
+        function clearPin() {
+            if (enteredPin.length > 0) {
+                enteredPin = "";
+                updatePinDots();
+                playBeep(600, 0.05);
+                pinStatus.innerHTML = '<i class="fas fa-key"></i><span>أدخل الرمز السري</span>';
+                pinStatus.className = 'pin-status';
+            }
+        }
+        
+        function checkPin() {
+            if (enteredPin.length !== 4) {
+                shakePin();
+                pinStatus.innerHTML = '<i class="fas fa-exclamation-circle"></i><span>   يزربه كاتبلج يتكوون منن اربع ارقام </span>';
+                pinStatus.className = 'pin-status error';
+                playErrorSound();
+                return;
+            }
+            
+            attempts++;
+            updateAttempts();
+            
+            if (enteredPin === PIN_CODE) {
+                // SUCCESS!
+                pinStatus.innerHTML = '<i class="fas fa-check-circle"></i><span> صح عليج</span>';
+                pinStatus.className = 'pin-status success';
+                playSuccessSound();
+                
+                // Celebrate effects
+                celebrateSuccess();
+                
+                // Open portal after delay
+                setTimeout(() => {
+                    openSuccessPortal();
+                }, 1500);
+                
+            } else {
+                // ERROR
+                pinStatus.innerHTML = `<i class="fas fa-times-circle"></i><span>الرمز غلط ركزي المحاوله ${attempts}/${maxAttempts}</span>`;
+                pinStatus.className = 'pin-status error';
+                playErrorSound();
+                shakePin();
+                
+                if (attempts >= maxAttempts) {
+                    setTimeout(lockSystem, 1000);
+                }
+                
+                // Reset PIN after error
+                setTimeout(() => {
+                    enteredPin = "";
+                    updatePinDots();
+                }, 1000);
+            }
+        }
+        
+        function updatePinDots() {
+            pinDots.forEach((dot, index) => {
+                if (index < enteredPin.length) {
+                    dot.classList.add('active');
+                    dot.style.animation = 'dotPulse 0.5s ease';
+                } else {
+                    dot.classList.remove('active');
+                    dot.style.animation = '';
+                }
+            });
+        }
+        
+        function shakePin() {
+            const container = document.querySelector('.pin-display-container');
+            container.style.animation = 'errorShake 0.5s ease';
+            setTimeout(() => {
+                container.style.animation = '';
+            }, 500);
+        }
+        
+        function updateAttempts() {
+            attemptsDots.forEach((dot, index) => {
+                if (index < maxAttempts - attempts) {
+                    dot.classList.add('active');
+                    dot.classList.remove('used');
+                } else {
+                    dot.classList.remove('active');
+                    dot.classList.add('used');
+                }
+            });
+        }
+        
+        function lockSystem() {
+            document.querySelectorAll('.cosmic-key').forEach(key => {
+                key.disabled = true;
+                key.classList.add('disabled');
+                key.style.cursor = 'not-allowed';
+                key.style.opacity = '0.5';
+            });
+            
+            pinStatus.innerHTML = '<i class="fas fa-ban"></i><span>النظام مغلق! أعد تحميل الصفحة</span>';
+            pinStatus.className = 'pin-status error';
+            
+            // Add reload button
+            const reloadBtn = document.createElement('button');
+            reloadBtn.innerHTML = '<i class="fas fa-redo"></i> إعادة التحميل';
+            reloadBtn.style.cssText = `
+                display: block;
+                margin: 20px auto;
+                padding: 15px 30px;
+                background: linear-gradient(45deg, #ff0000, #ff6b6b);
+                border: none;
+                border-radius: 15px;
+                color: white;
+                font-size: 18px;
+                cursor: pointer;
+                font-family: 'Tajawal', sans-serif;
+                font-weight: bold;
+            `;
+            reloadBtn.addEventListener('click', () => location.reload());
+            document.querySelector('.space-message').appendChild(reloadBtn);
+        }
+        
+        function celebrateSuccess() {
+            // Create explosion stars
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    createStarExplosion();
+                }, i * 50);
+            }
+            
+            // Change background glow
+            const frame = document.querySelector('.galaxy-frame');
+            frame.style.boxShadow = 
+                '0 20px 50px rgba(0, 0, 0, 0.5), ' +
+                '0 0 0 1px rgba(0, 255, 255, 0.3), ' +
+                '0 0 50px rgba(0, 255, 255, 0.4), ' +
+                'inset 0 0 30px rgba(255, 255, 255, 0.1)';
+        }
+        
+        function createStarExplosion() {
+            const star = document.createElement('div');
+            star.style.cssText = `
+                position: absolute;
+                width: ${Math.random() * 6 + 2}px;
+                height: ${Math.random() * 6 + 2}px;
+                background: #fff;
+                border-radius: 50%;
+                top: 50%;
+                left: 50%;
+                opacity: 1;
+                z-index: 10;
+                pointer-events: none;
+                filter: blur(1px);
+            `;
+            
+            document.querySelector('.pin-display-container').appendChild(star);
+            
+            const angle = Math.random() * Math.PI * 2;
+            const distance = Math.random() * 100 + 50;
+            const x = Math.cos(angle) * distance;
+            const y = Math.sin(angle) * distance;
+            
+            star.animate([
+                { transform: 'translate(-50%, -50%) scale(1)', opacity: 1 },
+                { transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) scale(0)`, opacity: 0 }
+            ], {
+                duration: 800,
+                easing: 'ease-out'
+            });
+            
+            setTimeout(() => star.remove(), 800);
+        }
+        
+        function openSuccessPortal() {
+            successPortal.classList.add('active');
+            playPortalSound();
+            
+            // Start countdown
+            let count = 5;
+            countdownNumber.textContent = count;
+            
+            const countdown = setInterval(() => {
+                count--;
+                countdownNumber.textContent = count;
+                
+                if (count <= 0) {
+                    clearInterval(countdown);
+                    redirectToSite();
+                }
+            }, 1000);
+            
+            // Allow click to redirect immediately
+            successPortal.addEventListener('click', redirectToSite, { once: true });
+        }
+        
+        function redirectToSite() {
+            playSuccessSound();
+            
+            // Transition effect
+            document.body.style.transition = 'all 1s ease';
+            document.body.style.opacity = '0';
+            document.body.style.filter = 'blur(20px) brightness(2)';
+            
+            // Redirect after effect
+            setTimeout(() => {
+                window.location.href = "https://b4bp.github.io/essa-for-farah/";
+            }, 1000);
+        }
+        
+        function animateKeyPress(digit) {
+            const key = document.querySelector(`[data-key="${digit}"]`);
+            if (key) {
+                key.animate([
+                    { transform: 'scale(1)' },
+                    { transform: 'scale(0.9)' },
+                    { transform: 'scale(1)' }
+                ], {
+                    duration: 150,
+                    easing: 'ease-out'
+                });
+            }
+        }
+        
+        // =======================
+        // INITIALIZATION
+        // =======================
+        window.addEventListener('load', () => {
+            // Initialize audio
+            initAudio();
+            
+            // Start sounds by default
+            soundsEnabled = true;
+            soundToggle.className = 'sound-on';
+            
+            // Handle keyboard input
+            document.addEventListener('keydown', (e) => {
+                audioContext?.resume();
+                if (e.key >= '0' && e.key <= '9' && enteredPin.length < 4) {
+                    enterPin(e.key);
+                }
+                if (e.key === 'Enter') {
+                    checkPin();
+                }
+                if (e.key === 'Backspace' || e.key === 'Delete') {
+                    clearPin();
+                }
+                if (e.key === 'Escape') {
+                    location.reload();
+                }
+            });
+            
+            // Create shooting stars
+            function createShootingStars() {
+                const stars = document.querySelectorAll('.shooting-star');
+                stars.forEach(star => {
+                    star.style.left = Math.random() * 100 + 'vw';
+                    star.style.top = Math.random() * 100 + 'vh';
+                    star.style.animationDelay = Math.random() * 6 + 's';
+                });
+                
+                // Add more stars randomly
+                if (Math.random() > 0.7) {
+                    const newStar = document.createElement('div');
+                    newStar.className = 'shooting-star';
+                    newStar.style.left = Math.random() * 100 + 'vw';
+                    newStar.style.top = Math.random() * 100 + 'vh';
+                    newStar.style.animationDelay = Math.random() * 6 + 's';
+                    document.querySelector('.cosmic-bg').appendChild(newStar);
+                    
+                    setTimeout(() => newStar.remove(), 6000);
+                }
+            }
+            
+            // Create shooting stars every 2 seconds
+            setInterval(createShootingStars, 2000);
+            
+            // iOS specific fixes
+            if (navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform)) {
+                // Fix for iPhone 16 Pro Max dynamic island
+                const isIphone16ProMax = window.innerWidth === 430 && window.innerHeight === 932;
+                if (isIphone16ProMax) {
+                    document.documentElement.style.setProperty('--safe-top', '44px');
+                    document.documentElement.style.setProperty('--safe-bottom', '34px');
+                }
+                
+                // Prevent elastic scrolling
+                document.body.addEventListener('touchmove', (e) => {
+                    if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+                        e.preventDefault();
+                    }
+                }, { passive: false });
+            }
+            
+            // Adjust key sizes for mobile
+            function adjustKeySizes() {
+                const keys = document.querySelectorAll('.cosmic-key');
+                const width = window.innerWidth;
+                
+                if (width <= 360) {
+                    keys.forEach(key => {
+                        key.style.width = '60px';
+                        key.style.height = '60px';
+                        key.style.fontSize = '24px';
+                    });
+                } else if (width <= 480) {
+                    keys.forEach(key => {
+                        key.style.width = '65px';
+                        key.style.height = '65px';
+                        key.style.fontSize = '26px';
+                    });
+                } else if (width <= 768) {
+                    keys.forEach(key => {
+                        key.style.width = '70px';
+                        key.style.height = '70px';
+                        key.style.fontSize = '28px';
+                    });
+                }
+            }
+            
+            adjustKeySizes();
+            window.addEventListener('resize', adjustKeySizes);
+        });
+        
+        // Prevent default touch behaviors
+        document.addEventListener('touchstart', (e) => {
+            if (e.target.tagName === 'BUTTON') {
+                e.preventDefault();
+            }
+        }, { passive: false });
+        
+        // Prevent context menu on buttons
+        document.addEventListener('contextmenu', (e) => {
+            if (e.target.tagName === 'BUTTON') {
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
