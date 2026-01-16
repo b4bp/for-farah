@@ -1135,76 +1135,17 @@
         const soundToggle = document.getElementById('soundToggle');
         
         // =======================
-// WEB AUDIO API SOUNDS - FIXED FOR MOBILE
+// WEB AUDIO API SOUNDS
 // =======================
-let audioContext;
-let soundsEnabled = true;
-let audioInitialized = false;
-let isFirstInteraction = true;
-
 function initAudio() {
-    if (audioInitialized) return true;
-    
     try {
         audioContext = new (window.AudioContext || window.webkitAudioContext)();
-        audioInitialized = true;
-        console.log("✅ Audio initialized successfully");
         return true;
     } catch (e) {
-        console.log("❌ WebAudio not supported:", e);
+        console.log("WebAudio not supported");
         return false;
     }
 }
-
-function resumeAudioContext() {
-    if (!audioInitialized) {
-        if (!initAudio()) return false;
-    }
-    
-    if (audioContext && audioContext.state === 'suspended') {
-        audioContext.resume().then(() => {
-            console.log("✅ Audio context resumed");
-            // Play test sound on first interaction
-            if (isFirstInteraction) {
-                playBeep(600, 0.1);
-                isFirstInteraction = false;
-            }
-        }).catch(err => {
-            console.log("❌ Failed to resume audio:", err);
-        });
-    }
-    return true;
-}
-
-function playBeep(frequency = 800, duration = 0.1, type = 'sine', volume = 0.3) {
-    if (!soundsEnabled || !audioContext) return;
-    
-    try {
-        // Make sure audio context is active
-        if (audioContext.state === 'suspended') {
-            audioContext.resume();
-        }
-        
-        const oscillator = audioContext.createOscillator();
-        const gainNode = audioContext.createGain();
-        
-        oscillator.connect(gainNode);
-        gainNode.connect(audioContext.destination);
-        
-        oscillator.frequency.value = frequency;
-        oscillator.type = type;
-        
-        const now = audioContext.currentTime;
-        gainNode.gain.setValueAtTime(volume, now);
-        gainNode.gain.exponentialRampToValueAtTime(0.001, now + duration);
-        
-        oscillator.start();
-        oscillator.stop(now + duration);
-        
-        console.log("🔊 Sound played:", frequency, "Hz");
-    } catch (e) {
-        console.log("❌ Sound error:", e);
-    }
 }
         
         function playSuccessSound() {
